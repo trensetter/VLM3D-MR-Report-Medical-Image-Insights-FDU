@@ -1,0 +1,13 @@
+.git
+__pycache__
+*.pyc
+*.pyo
+*.tar.gz
+*.zip
+weights_root/
+test_input/
+test_output/
+checkpoint/
+runs/
+logs/
+*.log

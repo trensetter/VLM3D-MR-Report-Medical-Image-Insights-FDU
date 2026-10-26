@@ -1,0 +1,29 @@
+# Sanitized summary of the submitted checkpoint's recorded SFT configuration.
+# Private dataset locations and host-specific paths are intentionally omitted.
+model_family: Qwen3.5-4B
+checkpoint_identifier: checkpoint-4825
+initialized_from_checkpoint: checkpoint-1930
+dataset_identifier: MR-RATE 1:4-clean CoT training split
+training:
+  fine_tuning: LoRA
+  lora_rank: 64
+  lora_alpha: 128
+  use_rslora: true
+  target_modules: all-linear
+  epochs: 5
+  learning_rate: 5.0e-5
+  max_sequence_length: 81920
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  deepspeed: zero2
+  dtype: bfloat16
+  attention: flash_attention_2
+inference:
+  runtime: vLLM
+  batch_size: 4
+  max_new_tokens: 2048
+  temperature: 0
+  dtype: bfloat16
+  template: med-Qwen3-5-multi-channel-wl
+  input_modalities: [T1w, T2w, FLAIR]
+  output: report section only, one record per study

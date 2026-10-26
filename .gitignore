@@ -1,0 +1,31 @@
+# Model weights and exported images
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.zip
+*.tar
+*.tar.gz
+*.docker
+image.tar.gz
+weights/
+weights_root/
+
+# Private or mounted challenge data
+data/
+datasets/private/
+test_input/
+test_output/
+*.nii
+*.nii.gz
+*.b2nd
+*.jsonl
+
+# Local runtime artifacts
+checkpoint/
+output/
+logs/
+*.log
+__pycache__/
+*.py[cod]
+.DS_Store
