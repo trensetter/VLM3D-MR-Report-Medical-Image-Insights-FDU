@@ -1,4 +1,4 @@
-# The exact submission image used an internal prebuilt med-swift/vLLM runtime.
+# The exact submission image used an internal prebuilt med-swift runtime.
 # Supply an authorized, compatible base image when building; this template does
 # not embed private registry addresses or model weights.
 ARG MRRATE_BASE_IMAGE
@@ -15,14 +15,7 @@ ENV PYTHONUNBUFFERED=1 \
     MRRATE_MAX_NEW_TOKENS=2048 \
     MRRATE_TEMPERATURE=0 \
     MRRATE_INFER_BATCH_SIZE=4 \
-    MRRATE_PREPROCESS_WORKERS=4 \
-    MRRATE_VLLM_USE_ASYNC_ENGINE=1 \
-    MRRATE_VLLM_GPU_MEMORY_UTILIZATION=0.9 \
-    MRRATE_VLLM_MAX_MODEL_LEN=49152 \
-    MRRATE_VLLM_MAX_NUM_SEQS=4 \
-    MRRATE_VLLM_MM_PROCESSOR_CACHE_GB=0 \
-    MRRATE_VLLM_ATTENTION_BACKEND=FLASH_ATTN \
-    MRRATE_VLLM_GDN_PREFILL_BACKEND=triton \
+    MRRATE_FAIL_FAST=1 \
     XYZ_SIZE=256 \
     ZSIZE=256 \
     FPS_MAX_FRAMES=64 \

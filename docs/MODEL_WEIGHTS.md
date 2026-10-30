@@ -1,19 +1,20 @@
 # Model Weights
 
-## Artifact
+## Artifact Identity
 
-- Submission: Qwen3.5-4B LoRA, five-epoch run.
-- Final training checkpoint identifier: `checkpoint-4825`.
-- The LoRA weights were merged into a Hugging Face-compatible model directory before Docker packaging.
-- The run was initialized from SFT checkpoint `checkpoint-1930`.
-- The recorded training and inference configuration is in [`../configs/qwen35_lora_ep5.yaml`](../configs/qwen35_lora_ep5.yaml).
+- Submitted model: Qwen3.5-4B LoRA, five-epoch run.
+- Training checkpoint: `checkpoint-4825`, initialized from `checkpoint-1930`.
+- The LoRA checkpoint was merged into a Hugging Face-compatible model directory for inference and packaged as a separate `weights.zip` for the platform.
+- The archive's SHA-256 is recorded in [`SUBMISSION_ARTIFACTS.md`](SUBMISSION_ARTIFACTS.md). A digest identifies a file; it does not make that file publicly downloadable.
 
 ## Availability
 
-The final checkpoint is **not publicly available**. The authors selected the unavailable/restricted option for model-weight availability in the challenge questionnaire. There is no public download link and no access-request process offered by this repository. This is an availability disclosure, not an invitation to request or redistribute the checkpoint.
+The final checkpoint is **not publicly available**. The authors selected the unavailable/restricted option in the challenge questionnaire. There is no public download link or access-request process offered by this repository. This is a disclosure, not an invitation to request or redistribute the checkpoint.
 
-The checkpoint and submitted Docker image are not included in this repository. The base model and MR-RATE data are separate artifacts governed by their respective owners and terms; their status should not be inferred from the checkpoint statement above.
+The base Qwen3.5 model, MR-RATE data, patient reports, labels, LoRA adapter, and merged weights are not included. Their ownership and terms are separate; this repository does not grant redistribution rights.
 
-## Redistribution
+## Docker Image and Weights
 
-No MR-RATE images, reports, labels, base-model files, LoRA adapters, merged weights, or API credentials are uploaded here. No external access to derived weights is provided. Do not infer permission to redistribute the base model, dataset, adapter, or merged checkpoint from this repository.
+The platform submission used two artifacts: a Docker image archive and a separate `weights.zip`, mounted at `/weights` at runtime. Neither binary is stored in GitHub. The image archive is multi-gigabyte, and publishing it here would not be an appropriate substitute for the platform's artifact upload. The weights remain restricted as stated above.
+
+Do not add model files, archives, patient data, or credentials to this repository. See [`SUBMISSION_ARTIFACTS.md`](SUBMISSION_ARTIFACTS.md) for the exact recorded filenames, sizes, and hashes.
