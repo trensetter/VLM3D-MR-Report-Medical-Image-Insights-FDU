@@ -16,12 +16,15 @@ This file identifies the Qwen3.5-4B LoRA ep5 artifact that was submitted to the 
 | Image archive SHA-256 | `605a24856b20460bf0aa428203539e0323e5123c9047cad3ffedb8d435feb53e` |
 | Weights archive | `weights.zip`, 9,098,710,899 bytes |
 | Weights archive SHA-256 | `b5cf43526f50760fc15604db28bf239e8ca7cbffaef6b377f68a12b9fbd5d61d` |
+| Public model files | [sleepyhores/mrrate-qwen35-4b-reportgen-submission](https://huggingface.co/sleepyhores/mrrate-qwen35-4b-reportgen-submission) |
+| Public shard 1 SHA-256 | `db8f65950861a7f77a17e80530a9b8d6e981dccbf8f48d56ba56f3a7c11cfd32` |
+| Public shard 2 SHA-256 | `8ff83e6ec272957e7114839e637ab79176a34e9a8ee6c85be4fd117e458b286f` |
 | Submitted compute tier | `gpu-a100-40` |
 | Time budget | 600 minutes |
 | Runtime log | 2,029 study inputs discovered; this alone does not confirm all were completed |
 | Last known status | `failed`; no official score/rank was returned |
 
-The image and weight digests above were independently checked between the server and the author's Mac. They identify the historical files but are not download links. The submitted image was based on a private `med-swift:v4-20260821-2` runtime. The archived binary cannot be rebuilt from this public repository alone because the base image and checkpoint are not public. No signed build provenance binds the image digest to this GitHub commit.
+The image and original weight-archive digests above were independently checked between the server and the author's Mac. The Hugging Face repository hosts the model files from that weights archive, with host-specific and training-only metadata removed from `args.json`; the tensor shards are unchanged. The submitted image was based on a private `med-swift:v4-20260821-2` runtime and is not publicly distributed. The archived image cannot be rebuilt from this public repository alone because the base image is private. No signed build provenance binds the image digest to this GitHub commit.
 
 ## Inference Configuration
 
@@ -36,7 +39,7 @@ The image and weight digests above were independently checked between the server
 
 - **Input:** one study ZIP per case under `/input`; extract and process one study at a time.
 - **Output:** `/output/predictions.json` with `{"generated_reports": [{"input_image_name": "<STUDY>.nii.gz", "report": "..."}]}`.
-- **Weights:** separate `weights.zip`, mounted at `/weights`; no model weights are stored in this repository.
+- **Weights:** separate `weights.zip` was mounted at `/weights` for the platform run. The public merged model files are hosted on Hugging Face, not in this GitHub repository; see [`MODEL_WEIGHTS.md`](MODEL_WEIGHTS.md).
 - **Offline:** `TRANSFORMERS_OFFLINE=1` and `HF_HUB_OFFLINE=1` are set by the entrypoint.
 - **Non-root image user:** the Dockerfile declares `USER appuser`.
 - **Restartability:** completed studies are recorded under `/checkpoint`.

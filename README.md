@@ -11,7 +11,7 @@ This repository documents the **Qwen3.5-4B LoRA ep5** artifact submitted to the 
 - Training data: the 61,744-record MR-RATE `1:4-clean` CoT training set. The model receives images and an instruction at inference, not ground-truth disease labels.
 - Inference: T1w/T2w/FLAIR NIfTI inputs, common-plane selection, ms-swift `TransformersEngine` (not vLLM), SDPA, sequential per-study preprocessing, inference batch size 4, temperature 0, maximum 2,048 new tokens.
 - Submitted container image tag: `mrrate-qwen35-lora-ep5-nifti:batch4-test-20260829`.
-- Model weights were shipped separately from the container image to the platform. They are **not publicly available** and are not included here.
+- The submitted merged model weights are publicly available from the [Hugging Face model repository](https://huggingface.co/sleepyhores/mrrate-qwen35-4b-reportgen-submission). Download and runtime-mount instructions are in [`docs/MODEL_WEIGHTS.md`](docs/MODEL_WEIGHTS.md).
 - The platform log recorded 2,029 study inputs. The submission's last known status is failed; this does not establish that all 2,029 predictions were completed.
 - Exact artifact sizes, SHA-256 digests, platform submission identifier, known status, and compliance notes: [`docs/SUBMISSION_ARTIFACTS.md`](docs/SUBMISSION_ARTIFACTS.md).
 
@@ -32,11 +32,11 @@ See the official [MR report-generation example Docker](https://github.com/forith
 
 ## Model, Data, and Reproduction
 
-MR-RATE images, patient reports, labels, base-model files, and final checkpoint files are not redistributed. The weight availability response in the challenge questionnaire was `unavailable / access restricted`; this repository provides no download or access-request route. See [`docs/MODEL_WEIGHTS.md`](docs/MODEL_WEIGHTS.md).
+The submitted merged checkpoint is available from the Hugging Face model repository linked above. MR-RATE images, patient reports, labels, and evaluation data are not redistributed and must be obtained under the dataset owner's terms. The public model repository contains the merged model files, not the original `weights.zip` byte-for-byte; its training-path metadata was sanitized before publication. See [`docs/MODEL_WEIGHTS.md`](docs/MODEL_WEIGHTS.md).
 
 The data source is the [official MR-RATE repository](https://github.com/forithmus/MR-RATE) and its [Hugging Face dataset](https://huggingface.co/datasets/Forithmus/MR-RATE-atlas). The official repository states that MR-RATE datasets and model weights are under CC BY-NC-SA 4.0; users must review those terms before reuse. The base model has its own license, shown on its model card. These upstream terms are not replaced by this repository's no-license notice.
 
-The original runtime used an internal `med-swift` base image. Consequently, this repository contains the source snapshot and a build template, but cannot independently reproduce the submitted binary without authorized access to that base image and the separate weights. The Docker archive and model weights are intentionally not stored in GitHub; their exact digests are recorded for identification. [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) lists the build/test flow and its prerequisites.
+The original runtime used an internal `med-swift` base image. The Docker image is not publicly distributed; reproducing the exact submitted runtime therefore requires authorized access to a compatible base image. The model weights are hosted separately on Hugging Face, while the Docker source snapshot and build template remain here. See [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) for prerequisites and the weight-mount workflow.
 
 ## Team and Contact
 

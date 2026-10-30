@@ -6,7 +6,7 @@ This guide follows the organizer's current [VLM3D-Dockers README](https://github
 
 - Docker with NVIDIA Container Toolkit and a supported GPU.
 - An authorized compatible `med-swift` runtime image. The original base `med-swift:v4-20260821-2` is private and is not published by this repository. The runtime must already include the Python/CUDA/ms-swift dependencies listed in `docker/requirements.txt`; the template does not fetch packages at build or runtime.
-- The separate, authorized model-weight bundle arranged under `/weights/model`. The actual checkpoint is not publicly available, so a public clone alone cannot run model inference.
+- The publicly downloadable merged checkpoint arranged under `/weights/model`; follow [`MODEL_WEIGHTS.md`](MODEL_WEIGHTS.md).
 - `forithmus` CLI authentication and the `mr-report-generation` challenge context for platform-schema testing.
 
 ## Build
@@ -31,7 +31,7 @@ forithmus generate
 forithmus test mrrate-qwen35-lora-ep5-nifti:latest --timeout 1200
 ```
 
-The `forithmus` synthetic set checks container startup and output shape; it does not validate clinical quality. The model weights must be available at runtime. The expected report-generation output is one `/output/predictions.json` containing a `generated_reports` array, with an entry for every study.
+The `forithmus` synthetic set checks container startup and output shape; it does not validate clinical quality. Download the model files as described in [`MODEL_WEIGHTS.md`](MODEL_WEIGHTS.md) and mount them at `/weights/model`. The expected report-generation output is one `/output/predictions.json` containing a `generated_reports` array, with an entry for every study.
 
 ## Package the Docker Image
 
@@ -39,7 +39,7 @@ The `forithmus` synthetic set checks container startup and output shape; it does
 docker save mrrate-qwen35-lora-ep5-nifti:latest | gzip > image.tar.gz
 ```
 
-Weights are a separate platform artifact, not copied into the image or this GitHub repository. The organizer requires the files inside `weights.zip` to be at the archive root and expects the bundle to be mounted at `/weights`. The checkpoint described in this repository is unavailable, so this package step cannot be completed from a public clone.
+Weights are separate from the Docker image. For platform submission, the organizer expects a `weights.zip` whose contents are at the archive root and mounts the bundle at `/weights`. For local use, download the Hugging Face model files into `weights/model` and mount the parent directory at `/weights`. The public GitHub repository does not provide the internal `med-swift` base image needed to rebuild the exact historical container.
 
 ## Platform Submission
 
