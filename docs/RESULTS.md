@@ -2,7 +2,7 @@
 
 ## Official Result
 
-The current official score and rank for **Medical Image Insights & FDU** are available from the [Forithmus Research Hub](https://research.forithmus.com/). Open the **MR Report Generation** challenge and find the team on its leaderboard. This repository does not present local metrics as official challenge results.
+The current official score and rank for **Medical Image Insights & FDU** are available on the [MR Report Generation challenge page and leaderboard](https://research.forithmus.com/challenges/mr-report-generation). This repository does not present local metrics as official challenge results.
 
 ## Local Evaluation
 

@@ -6,7 +6,7 @@ tags:
 - magnetic-resonance-imaging
 - radiology-report-generation
 - mr-rate
-license: other
+license: cc-by-nc-sa-4.0
 ---
 
 # MR-RATE Qwen3.5-4B Report Generation
@@ -41,4 +41,4 @@ The historical competition Docker image and its internal `med-swift:v4-20260821-
 
 ## Results and Limitations
 
-Check the official Forithmus MR Report Generation leaderboard for the current score and rank of **Medical Image Insights & FDU**. This research model is not validated for clinical use. No additional license is granted by this model card; review the base-model and dataset terms before use.
+Check the official [Forithmus MR Report Generation challenge page and leaderboard](https://research.forithmus.com/challenges/mr-report-generation) for the current score and rank of **Medical Image Insights & FDU**. The fine-tuned checkpoint is licensed under CC BY-NC-SA 4.0 for non-commercial use and is intended for research; it is not validated for clinical use. Review the base-model and dataset terms before use. The GitHub source-code license is separate and does not relicense this checkpoint.

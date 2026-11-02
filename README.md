@@ -2,7 +2,7 @@
 
 This repository documents the **Qwen3.5-4B LoRA ep5** artifact submitted to the Forithmus MR Report Generation track. It includes the submitted inference-source snapshot, a sanitized training configuration, a Docker build template, artifact identifiers, and disclosures about weights and platform status.
 
-> **Official results:** See the Forithmus MR Report Generation leaderboard for the current results of **Medical Image Insights & FDU**. See [`docs/RESULTS.md`](docs/RESULTS.md).
+> **Official results:** See the [MR Report Generation challenge and leaderboard](https://research.forithmus.com/challenges/mr-report-generation) for the current results of **Medical Image Insights & FDU**. See [`docs/RESULTS.md`](docs/RESULTS.md).
 
 ## Submitted Artifact
 
@@ -33,7 +33,7 @@ See the official [MR report-generation example Docker](https://github.com/forith
 
 The submitted merged checkpoint is available from the Hugging Face model repository linked above. MR-RATE images, patient reports, labels, and evaluation data are not redistributed and must be obtained under the dataset owner's terms. The public model repository contains the merged model files, not the original `weights.zip` byte-for-byte; its training-path metadata was sanitized before publication. See [`docs/MODEL_WEIGHTS.md`](docs/MODEL_WEIGHTS.md).
 
-The data source is the [official MR-RATE repository](https://github.com/forithmus/MR-RATE) and its [Hugging Face dataset](https://huggingface.co/datasets/Forithmus/MR-RATE-atlas). The official repository states that MR-RATE datasets and model weights are under CC BY-NC-SA 4.0; users must review those terms before reuse. The base model has its own license, shown on its model card. These upstream terms are not replaced by this repository's no-license notice.
+The data source is the [official MR-RATE repository](https://github.com/forithmus/MR-RATE) and its [Hugging Face dataset](https://huggingface.co/datasets/Forithmus/MR-RATE-atlas). The official repository states that MR-RATE datasets and model weights are under CC BY-NC-SA 4.0; users must review those terms before reuse. The base model has its own license, shown on its model card. This repository's Apache-2.0 license applies only to original code and documentation here; it does not replace or change upstream terms for the dataset, base model, or third-party dependencies. The separately hosted fine-tuned checkpoint is licensed under CC BY-NC-SA 4.0; see [`docs/MODEL_WEIGHTS.md`](docs/MODEL_WEIGHTS.md).
 
 The original runtime used an internal `med-swift` base image. The Docker image is not publicly distributed; reproducing the exact submitted runtime therefore requires authorized access to a compatible base image. The model weights are hosted separately on Hugging Face, while the Docker source snapshot and build template remain here. See [`docs/REPRODUCTION.md`](docs/REPRODUCTION.md) for prerequisites and the weight-mount workflow.
 
@@ -45,4 +45,4 @@ The original runtime used an internal `med-swift` base image. The Docker image i
 
 ## License
 
-No license is granted by this repository. The upstream model, dataset, and runtime dependencies remain subject to their respective owners' terms.
+Original code and documentation in this repository are licensed under the Apache License 2.0; see [`LICENSE`](LICENSE). This does not grant rights to third-party materials or the separately hosted model checkpoint, which have their own applicable terms.

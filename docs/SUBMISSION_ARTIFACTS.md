@@ -50,4 +50,4 @@ A separate vLLM image candidate was built later and locally tested; it is not th
 
 ## Source of Truth
 
-For the current official score and rank, check the [Forithmus Research Hub](https://research.forithmus.com/) and search the MR Report Generation leaderboard for **Medical Image Insights & FDU**. This file records artifact identity and hashes, not the platform's live result.
+For the current official score and rank, check the [MR Report Generation challenge page and leaderboard](https://research.forithmus.com/challenges/mr-report-generation) for **Medical Image Insights & FDU**. This file records artifact identity and hashes, not the platform's live result.

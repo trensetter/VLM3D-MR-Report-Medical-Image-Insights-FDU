@@ -5,6 +5,7 @@
 - Model: merged Qwen3.5-4B checkpoint from the five-epoch LoRA run.
 - Training checkpoint: `checkpoint-4825`, initialized from SFT `checkpoint-1930`.
 - Public model files: [sleepyhores/mrrate-qwen35-4b-reportgen-submission](https://huggingface.co/sleepyhores/mrrate-qwen35-4b-reportgen-submission).
+- License for the published fine-tuned checkpoint: [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/). It is intended for non-commercial research use; it is not validated for clinical use. The base model and dataset retain their respective upstream terms.
 - The published model files preserve the submitted tensor weights. Host-specific paths and training-only references in `args.json` were removed; the original platform `weights.zip` digest is recorded separately in [`SUBMISSION_ARTIFACTS.md`](SUBMISSION_ARTIFACTS.md).
 
 Download the files into the directory structure expected by the container (`/weights/model`):
@@ -45,6 +46,6 @@ The input directory must contain one organizer-format study ZIP per case. The co
 
 The historical competition Docker image is not publicly distributed. Its original base, `med-swift:v4-20260821-2`, is an internal image; building the provided Docker template requires authorized access to a compatible base image. The model weights alone are not a complete runnable environment. See [`REPRODUCTION.md`](REPRODUCTION.md) for build and validation prerequisites.
 
-MR-RATE images, reports, labels, and hidden evaluation data are not included. Users must obtain permitted data access from the dataset owner and comply with the dataset and base-model terms. This repository does not grant clinical-use permission or a separate license for the checkpoint; review upstream terms before use.
+MR-RATE images, reports, labels, and hidden evaluation data are not included. Users must obtain permitted data access from the dataset owner and comply with the dataset and base-model terms. The GitHub source and documentation are Apache-2.0, while this separately hosted fine-tuned checkpoint is CC BY-NC-SA 4.0. The checkpoint is not validated for clinical use.
 
 Do not commit local weights, access tokens, MRI files, or reports to GitHub. See [`SUBMISSION_ARTIFACTS.md`](SUBMISSION_ARTIFACTS.md) for artifact identity and hashes.
