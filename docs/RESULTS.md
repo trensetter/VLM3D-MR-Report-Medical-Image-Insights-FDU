@@ -2,9 +2,7 @@
 
 ## Official Result
 
-The last known platform record for the Qwen3.5-4B LoRA ep5 artifact documented in this repository was **failed**. No official score or rank was returned for that run. Do not interpret local metrics as an official challenge result.
-
-The [Forithmus Research Hub](https://research.forithmus.com/) is authoritative for current team results. Open the **MR Report Generation** challenge and search for **Medical Image Insights & FDU**. If the platform has a later successful submission for the team, its leaderboard entry supersedes the historical status recorded here.
+The current official score and rank for **Medical Image Insights & FDU** are available from the [Forithmus Research Hub](https://research.forithmus.com/). Open the **MR Report Generation** challenge and find the team on its leaderboard. This repository does not present local metrics as official challenge results.
 
 ## Local Evaluation
 

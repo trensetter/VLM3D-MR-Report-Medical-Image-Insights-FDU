@@ -2,7 +2,7 @@
 
 This repository documents the **Qwen3.5-4B LoRA ep5** artifact submitted to the Forithmus MR Report Generation track. It includes the submitted inference-source snapshot, a sanitized training configuration, a Docker build template, artifact identifiers, and disclosures about weights and platform status.
 
-> **Submission status:** the last known platform record for this artifact is `failed`; no official score or rank was returned for that run. The platform leaderboard is authoritative for any later team result. See [`docs/RESULTS.md`](docs/RESULTS.md).
+> **Official results:** See the Forithmus MR Report Generation leaderboard for the current results of **Medical Image Insights & FDU**. See [`docs/RESULTS.md`](docs/RESULTS.md).
 
 ## Submitted Artifact
 
@@ -12,7 +12,6 @@ This repository documents the **Qwen3.5-4B LoRA ep5** artifact submitted to the 
 - Inference: T1w/T2w/FLAIR NIfTI inputs, common-plane selection, ms-swift `TransformersEngine` (not vLLM), SDPA, sequential per-study preprocessing, inference batch size 4, temperature 0, maximum 2,048 new tokens.
 - Submitted container image tag: `mrrate-qwen35-lora-ep5-nifti:batch4-test-20260829`.
 - The submitted merged model weights are publicly available from the [Hugging Face model repository](https://huggingface.co/sleepyhores/mrrate-qwen35-4b-reportgen-submission). Download and runtime-mount instructions are in [`docs/MODEL_WEIGHTS.md`](docs/MODEL_WEIGHTS.md).
-- The platform log recorded 2,029 study inputs. The submission's last known status is failed; this does not establish that all 2,029 predictions were completed.
 - Exact artifact sizes, SHA-256 digests, platform submission identifier, known status, and compliance notes: [`docs/SUBMISSION_ARTIFACTS.md`](docs/SUBMISSION_ARTIFACTS.md).
 
 ## Track Contract

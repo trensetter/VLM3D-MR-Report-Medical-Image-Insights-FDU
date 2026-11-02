@@ -37,7 +37,7 @@ See `docker/src/preprocessing.py`, `docker/src/qwen35_nifti_template.py`, and `d
 
 The model response contains `<finding>` and `<report>` sections. The container extracts the report body and writes exactly one entry per study to `/output/predictions.json`. Completed results are appended to `/checkpoint`, allowing a restarted container to skip already-completed studies.
 
-The organizer's MR contract is documented in the [official reference container](https://github.com/forithmus/VLM3D-Dockers/tree/main/mr_challenges/reportgen_example_docker): study ZIPs are mounted at `/input`, and the expected output is a flat `predictions.json` containing `generated_reports` with `<STUDY>.nii.gz` identifiers. The challenge's report-generation score is computed by the platform.
+The organizer's MR contract is documented in the [official reference container](https://github.com/forithmus/VLM3D-Dockers/tree/main/mr_challenges/reportgen_example_docker): study ZIPs are mounted at `/input`, and the expected output is a flat `predictions.json` containing `generated_reports` with `<STUDY>.nii.gz` identifiers. The challenge's report-generation score is computed by the platform. Local label extraction from the structured finding section is not the official report-to-label extraction pipeline and must not be described as the official CRG score.
 
 ## Availability and Reproducibility
 

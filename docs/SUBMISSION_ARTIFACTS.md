@@ -21,8 +21,6 @@ This file identifies the Qwen3.5-4B LoRA ep5 artifact that was submitted to the 
 | Public shard 2 SHA-256 | `8ff83e6ec272957e7114839e637ab79176a34e9a8ee6c85be4fd117e458b286f` |
 | Submitted compute tier | `gpu-a100-40` |
 | Time budget | 600 minutes |
-| Runtime log | 2,029 study inputs discovered; this alone does not confirm all were completed |
-| Last known status | `failed`; no official score/rank was returned |
 
 The image and original weight-archive digests above were independently checked between the server and the author's Mac. The Hugging Face repository hosts the model files from that weights archive, with host-specific and training-only metadata removed from `args.json`; the tensor shards are unchanged. The submitted image was based on a private `med-swift:v4-20260821-2` runtime and is not publicly distributed. The archived image cannot be rebuilt from this public repository alone because the base image is private. No signed build provenance binds the image digest to this GitHub commit.
 
@@ -52,4 +50,4 @@ A separate vLLM image candidate was built later and locally tested; it is not th
 
 ## Source of Truth
 
-Platform status and official metrics can change. Check the [Forithmus Research Hub](https://research.forithmus.com/) and search the MR Report Generation leaderboard for **Medical Image Insights & FDU**. The status above is the last known record supplied for this specific artifact.
+For the current official score and rank, check the [Forithmus Research Hub](https://research.forithmus.com/) and search the MR Report Generation leaderboard for **Medical Image Insights & FDU**. This file records artifact identity and hashes, not the platform's live result.

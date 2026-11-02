@@ -41,4 +41,4 @@ The historical competition Docker image and its internal `med-swift:v4-20260821-
 
 ## Results and Limitations
 
-The last known platform record for the identified submission was `failed`; no official score or rank was returned. Check the official leaderboard for any later team result. This research model is not validated for clinical use. No additional license is granted by this model card; review the base-model and dataset terms before use.
+Check the official Forithmus MR Report Generation leaderboard for the current score and rank of **Medical Image Insights & FDU**. This research model is not validated for clinical use. No additional license is granted by this model card; review the base-model and dataset terms before use.

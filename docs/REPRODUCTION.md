@@ -43,4 +43,4 @@ Weights are separate from the Docker image. For platform submission, the organiz
 
 ## Platform Submission
 
-The historical submission status is recorded as failed; do not re-submit or incur compute charges based only on this documentation. If a new submission is intentionally made, use the current CLI and challenge page, select the requested tier/time budget, pass the Docker archive and an authorized weights archive separately, and verify the output schema first. A later submission is a new platform run and does not resume the historical failed run unless the platform explicitly offers that action.
+Before submitting, verify the current CLI and challenge requirements, select the requested tier and time budget, provide the Docker archive and an authorized weights archive, and validate the output schema. A new submission starts a new platform run; it resumes prior progress only if the platform explicitly provides a continuation option for that submission.
